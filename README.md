@@ -9,17 +9,17 @@ For this project, we tried to generate faces with the following conditionals.
 ```
 
 Some of the best results are in the images bellow.
-
-<img src='output.png' align='center' height=200 width=900>
 <br><br>
-
+<img src='output.png' align='center' height=200 width=900>
+<br>
 The dataset we are using is called CelebA. It's a:
+<br>
 ```quote
 CelebFaces Attributes Dataset (CelebA) is a large-scale face attributes dataset with more than 200K celebrity images, each with 40 attribute annotations. 
 ```
-
+<br>
 <img src='output4.png' align='center' height=200 width=900>
-<br><br>
+<br>
 Due to the large size of the dataset, we implemented prefetching to improve the input pipeline performance during training:
 
 ```python
@@ -29,4 +29,5 @@ dataset = dataset.shuffle(buffer_size=10000)
 dataset = dataset.batch(32)
 dataset = dataset.prefetch(tf.data.AUTOTUNE)
 ```
+<br>
 <img src='output5.png' align='center' height=200 width=900>
